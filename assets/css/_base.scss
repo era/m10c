@@ -26,7 +26,9 @@ a {
     color: $lightest-color;
   }
 }
-
+p a {
+  text-decoration: underline lightblue;
+}
 // Browsers seem to use a smaller default font-size with monospaced code
 // blocks (like 80% of the size of normal text) and that looks pretty bad with
 // small inline code-blocks in the middle of normal text (mainly because of
