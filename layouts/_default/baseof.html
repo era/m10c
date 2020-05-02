@@ -10,8 +10,6 @@
     {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
     <link rel="stylesheet" href="{{ $style.Permalink }}" />
 
-    {{ template "_internal/google_analytics.html" . }}
-    {{ template "_internal/twitter_cards.html" . }}
     {{ template "_internal/opengraph.html" . }}
 
   </head>
@@ -25,6 +23,7 @@
           <a target="_blank" href="{{ .url }}" rel="noreferrer noopener">{{ partial "icon.html" (dict "ctx" $ "name" .name ) }}</a>
         {{ end }}
       </div>
+      <div> <a href="{{ .Site.BaseURL }}">index</a> . <a href="{{ .Site.BaseURL }}posts/about">about</a> </div>
     </header>
     <main class="app-container">
       {{ block "main" . }}
